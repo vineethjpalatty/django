@@ -10,7 +10,7 @@ def news(request):
     r = requests.get(url).json()
     print(r)
 
-    for  i in range(6):
+    for  i in range(5):
         city_news = \
             {
     #           'author' : r['articles'][0]['author'],
