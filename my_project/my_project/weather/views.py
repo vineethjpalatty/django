@@ -63,6 +63,7 @@ def weather(request):
     return render(request, 'htmlpage.html', context)
 
 
+
  # def delete_city(request, city_name):
  #        City.objects.get(name=city_name).delete()
  #

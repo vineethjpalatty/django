@@ -2,14 +2,50 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+        }
+
+        .topnav a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        .topnav a.active {
+          background-color: #4CAF50;
+          color: white;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="topnav">
+
+
+        <a href="{% url 'news' %}">Home</a>
+        <a class="active" href="#home">Weather</a>
+         <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'logout' %}">logout</a></p>
+    </div>
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
@@ -76,7 +112,7 @@
     </section>
     <footer class="footer">
     </footer>
-<a href="news.html">click</a>
+
 </body>
 
 </html>

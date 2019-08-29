@@ -1,8 +1,10 @@
 
 <!DOCTYPE html>
-<html>
+<section>
 <head>
 	<title>welcome to news</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel= stylesheet href="https //maxcdn.bootstrapcdn.com/bootstrap/4.7.0/css/font-awesome.min.css">
     <style>
 body {
   margin: 0;
@@ -34,19 +36,38 @@ body {
 }
 </style>
 </head>
-<a>
+    <a>
 
     <div class="topnav">
         <a class="active" href="#home">Home</a>
 
-        <a href="http://127.0.0.1:8000/weather/">Weather</a>
-         <a href="#about">About</a>
+
+
+
+
+        <a href="{% url 'category' 'business' %}">business</a>
+        <a href="{% url 'category' 'sports' %}">sports</a>
+        <a href="{% url 'category' 'technology' %}">technology</a>
+        <a href="{% url 'weather' %}">Weather</a>
+         <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'logout' %}">logout</a></p>
+
+
     </div>
 
-    <div style="padding-left:16px">
-        <h2>Whats the current news</h2>
-        <p>Top headlines</p>
-    </div>
+
+     <section class="hero is-primary">
+          <div class="hero-body" style="padding-left: 35%">
+            <h1 class="title">Whats the current news?</h1>
+
+          </div>
+     </section>
+      <section class="hero is-padding is-danger" style="height:100px">
+          <div class="hero-body" style="padding-left: 45%">
+            <h1 class="subtitle">Top Headlines</h1>
+
+          </div>
+     </section>
 
 	<section>
 			<div class="container">
@@ -72,16 +93,19 @@ body {
 <!--                                </div>-->
 <!--	</div>-->
     {% for city_news in news_data %}
-        <a href="{{city_news.url}}"
-	    <div class="container" style="background-image:url('{{city_news.image}}');  background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px">
-                                <div class="content" >
-                                    <p>
-                                        <span class="description">{{ city_news.description }}</span>
-                                        <br>
 
-                                </div>
-	    </div>
-        </a>
+            <a href="{{city_news.url}}"
+            <div class="coloumns" style="background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px;">
+
+                                    <div class="content" style="width:300px;height:300px" >
+                                        <p>
+                                            <span class="description"><font color="black">{{city_news.description}}</font> </span>
+                                            <br>
+
+                                    </div>
+            </div>
+            </a>
+
     {% endfor %}
 
 <!--	<div class="media-content">-->
@@ -92,17 +116,17 @@ body {
 
 <!--                                </div>-->
 <!--	</div>-->
-	<div class="container">
-                                <div class="content">
-                                    <p>
+<!--	<div class="container">-->
+<!--                                <div class="content">-->
+<!--                                    <p>-->
 
-                                       <a href="https://techcrunch.com/2019/08/21/thredup-whose-second-hand-goods-will-start-appearing-at-macys-and-jcpenney-just-raised-a-bundle/">..</a> <span class="url"></span>
-                                        <br>
+<!--                                       <a href="https://techcrunch.com/2019/08/21/thredup-whose-second-hand-goods-will-start-appearing-at-macys-and-jcpenney-just-raised-a-bundle/">..</a> <span class="url"></span>-->
+<!--                                        <br>-->
 
-                                </div>
-	</div>
+<!--                                </div>-->
+<!--	</div>-->
 
-    <a href="htmlpage.html">click</a>
+
 
 </body>
 </html>

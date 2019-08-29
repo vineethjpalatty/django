@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>category</title>
+    <title>welcome to news</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel= stylesheet href="https //maxcdn.bootstrapcdn.com/bootstrap/4.7.0/css/font-awesome.min.css">
+    <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+     <div class="topnav">
+        <a href="{% url 'news' %}">Home</a>
+
+        <a href="{% url 'weather' %}">Weather</a>
+         <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'logout' %}">logout</a></p>
+     </div>
+     <section class="hero is-padding is-danger" style="height:100px">
+          <div class="hero-body" style="padding-left: 45%">
+            <h1 class="subtitle">category</h1>
+
+          </div>
+     </section>
+
+    {% for category_news in category_data %}
+
+            <a href="{{category_news.url}}"
+            <div class="container" style="background-color:green;background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px;">
+
+                                    <div class="content" style="width:300px;height:300px" >
+                                        <p>
+                                            <span class="description"><font color="black">{{category_news.description}}</font> </span>
+                                            <br>
+
+                                    </div>
+            </div>
+            </a>
+
+    {% endfor %}
+</body>
+</html>

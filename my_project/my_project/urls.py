@@ -22,6 +22,8 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('news/',zcv.news,name='news'),
+    path('category/<str:tag>', zcv.category, name='category'),
+    path('about/',zcv.about,name='about'),
     path('weather/',zdv.weather,name='weather'),
     # path('delete_city/',zdv.delete_city,name='delete_city')
     path('', include('django.contrib.auth.urls')),
