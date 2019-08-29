@@ -5,6 +5,7 @@
 	<title>welcome to news</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel= stylesheet href="https //maxcdn.bootstrapcdn.com/bootstrap/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <style>
 body {
   margin: 0;
@@ -45,12 +46,12 @@ body {
 
 
 
-        <a href="{% url 'category' 'business' %}">business</a>
-        <a href="{% url 'category' 'sports' %}">sports</a>
-        <a href="{% url 'category' 'technology' %}">technology</a>
+        <a href="{% url 'category' 'business' %}">Business</a>
+        <a href="{% url 'category' 'sports' %}">Sports</a>
+        <a href="{% url 'category' 'technology' %}">Technology</a>
         <a href="{% url 'weather' %}">Weather</a>
          <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'logout' %}">logout</a></p>
+        <a href="{% url 'logout' %}">Logout</a></p>
 
 
     </div>
@@ -74,6 +75,7 @@ body {
 
     		</div>
 	</section>
+    <br>
 
 <!--	<div class="media-content">-->
 <!--                                <div class="content">-->
@@ -84,26 +86,27 @@ body {
 <!--                                </div>-->
 <!--	</div>-->
 
-<!--	<div class="media-content">-->
-<!--                                <div class="content">-->
-<!--                                    <p>-->
-<!--                                        <span class="title">{{ city_news.title }}</span>-->
-<!--                                        <br>-->
+	<div class="media-content">
 
-<!--                                </div>-->
-<!--	</div>-->
-    {% for city_news in news_data %}
+	</div>
 
+     {% for city_news in news_data %}
             <a href="{{city_news.url}}"
-            <div class="coloumns" style="background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px;">
 
-                                    <div class="content" style="width:300px;height:300px" >
-                                        <p>
-                                            <span class="description"><font color="black">{{city_news.description}}</font> </span>
-                                            <br>
-
-                                    </div>
-            </div>
+                <div class="box" style="background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px;">
+                        <div class="content" style="justify-content:center;font-family: 'Josefin Sans', sans-serif;padding-top:50px" >
+                            <p>
+                                <span class="subtitle"><font color="black">{{city_news.title}}</font> </span>
+                                <br>
+                            </p>
+                        </div>
+<!--                        <div class="content" style="justify-content:center;background-size:contain;" >-->
+<!--                            <p>-->
+<!--                                <span class="description"><font color="black">{{city_news.description}}</font> </span>-->
+<!--                                <br>-->
+<!--                            </p>-->
+<!--                        </div>-->
+                </div>
             </a>
 
     {% endfor %}

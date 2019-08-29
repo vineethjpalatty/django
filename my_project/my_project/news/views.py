@@ -15,7 +15,7 @@ def news(request):
         city_news = \
             {
     #           'author' : r['articles'][0]['author'],
-    #            'title': r['articles'][0]['title'],
+               'title': r['articles'][i]['title'],
                 'description' : r['articles'][i]['description'],
                 'image' : r['articles'][i]['urlToImage'],
                    'url' : r['articles'][i]['url']
@@ -31,9 +31,10 @@ def news(request):
     return render(request,'news.html',context)
 
 def category(request,tag):
-    url = "https://newsapi.org/v2/sources?language=en&category={}&apiKey=f9454a944cd14fdea4fb920d5a5378af"
+    url = "https://newsapi.org/v2/everything?q={}&apiKey=f9454a944cd14fdea4fb920d5a5378af"
     category=tag
     category_data = []
+    a=category
 
 
 
@@ -44,16 +45,17 @@ def category(request,tag):
     for  i in range(6):
         category_news = \
             {
+
     #           'author' : r['articles'][0]['author'],
     #            'title': r['articles'][0]['title'],
-                'description' : c['sources'][i]['description'],
+                'description' : c['articles'][i]['description'],
                 # 'image' : c['articles'][i]['urlToImage'],
-                    'url' : c['sources'][i]['url']
+                    'url' : c['articles'][i]['url']
             }
         category_data.append(category_news)
     #
     context = {
-
+                'category':a,
                 'category_data' : category_data
               }
 
