@@ -54,6 +54,7 @@
          <a href="{% url 'about' %}">About</a>
         <a href="{% url 'logout' %}">Logout</a></p>
      </div>
+     {% if user.is_authenticated %}
      <section class="hero is-padding is-primary" style="height:100px">
           <div class="hero-body" style="padding-left: 45%">
             <h1 class="title">Category</h1>
@@ -78,5 +79,10 @@
             </a>
 
     {% endfor %}
+
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
 </body>
 </html>

@@ -57,59 +57,66 @@ body {
     </div>
 
 
-     <section class="hero is-primary">
-          <div class="hero-body" style="padding-left: 35%">
-            <h1 class="title">Whats the current news?</h1>
 
-          </div>
-     </section>
-      <section class="hero is-padding is-danger" style="height:100px">
-          <div class="hero-body" style="padding-left: 45%">
-            <h1 class="subtitle">Top Headlines</h1>
 
-          </div>
-     </section>
+    {% if user.is_authenticated %}
+         <section class="hero is-primary">
+              <div class="hero-body" style="padding-left: 35%">
+                <h1 class="title">Whats the current news?</h1>
 
-	<section>
-			<div class="container">
+              </div>
+         </section>
+          <section class="hero is-padding is-danger" style="height:100px">
+              <div class="hero-body" style="padding-left: 45%">
+                <h1 class="subtitle">Top Headlines</h1>
 
-    		</div>
-	</section>
-    <br>
+              </div>
+         </section>
 
-<!--	<div class="media-content">-->
-<!--                                <div class="content">-->
-<!--                                    <p>-->
-<!--                                        <span class="title">{{ city_news.author }}</span>-->
-<!--                                        <br>-->
+        <section>
+                <div class="container">
 
-<!--                                </div>-->
-<!--	</div>-->
-
-	<div class="media-content">
-
-	</div>
-
-     {% for city_news in news_data %}
-            <a href="{{city_news.url}}"
-
-                <div class="box" style="background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px;">
-                        <div class="content" style="justify-content:center;font-family: 'Josefin Sans', sans-serif;padding-top:50px" >
-                            <p>
-                                <span class="subtitle"><font color="black">{{city_news.title}}</font> </span>
-                                <br>
-                            </p>
-                        </div>
-<!--                        <div class="content" style="justify-content:center;background-size:contain;" >-->
-<!--                            <p>-->
-<!--                                <span class="description"><font color="black">{{city_news.description}}</font> </span>-->
-<!--                                <br>-->
-<!--                            </p>-->
-<!--                        </div>-->
                 </div>
-            </a>
+        </section>
+        <br>
 
-    {% endfor %}
+    <!--	<div class="media-content">-->
+    <!--                                <div class="content">-->
+    <!--                                    <p>-->
+    <!--                                        <span class="title">{{ city_news.author }}</span>-->
+    <!--                                        <br>-->
+
+    <!--                                </div>-->
+    <!--	</div>-->
+
+        <div class="media-content">
+
+        </div>
+
+         {% for city_news in news_data %}
+                <a href="{{city_news.url}}"
+
+                    <div class="box" style="background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px;">
+                            <div class="content" style="justify-content:center;font-family: 'Josefin Sans', sans-serif;padding-top:50px" >
+                                <p>
+                                    <span class="subtitle"><font color="black">{{city_news.title}}</font> </span>
+                                    <br>
+                                </p>
+                            </div>
+    <!--                        <div class="content" style="justify-content:center;background-size:contain;" >-->
+    <!--                            <p>-->
+    <!--                                <span class="description"><font color="black">{{city_news.description}}</font> </span>-->
+    <!--                                <br>-->
+    <!--                            </p>-->
+    <!--                        </div>-->
+                    </div>
+                </a>
+
+        {% endfor %}
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
 
 <!--	<div class="media-content">-->
 <!--                                <div class="content">-->

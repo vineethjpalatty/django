@@ -44,6 +44,7 @@
          <a href="http://127.0.0.1:8000/weather/">Weather</a>
         <a href="{% url 'logout' %}">logout</a></p>
     </div>
+    {% if user.is_authenticated %}
     <section class="section">
       <div class="container">
 
@@ -117,8 +118,11 @@
 
           </div>
         </nav>
-      </section>
-
+       </section>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
 
 
 

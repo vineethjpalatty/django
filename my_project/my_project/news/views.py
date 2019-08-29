@@ -1,8 +1,8 @@
 from django.shortcuts import render
 import requests
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators
 
-@login_required
+
 # Create your views here.
 def news(request):
     url = 'https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=f9454a944cd14fdea4fb920d5a5378af'

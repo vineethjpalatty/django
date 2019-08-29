@@ -42,10 +42,11 @@
 
 
         <a href="{% url 'news' %}">Home</a>
-        <a class="active" href="#home">Weather</a>
+        <a class="active" href="#weather">Weather</a>
          <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'logout' %}">logout</a></p>
+        <a href="{% url 'logout' %}">Logout</a></p>
     </div>
+    {% if user.is_authenticated %}
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
@@ -112,6 +113,10 @@
     </section>
     <footer class="footer">
     </footer>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
 
 </body>
 
