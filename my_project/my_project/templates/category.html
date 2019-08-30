@@ -13,7 +13,7 @@
 
         .topnav {
           overflow: hidden;
-          background-color: #333;
+          background-color: black;
         }
 
         .topnav a {
@@ -26,7 +26,7 @@
         }
 
         .topnav a:hover {
-          background-color: #ddd;
+          background-color: #D3D3D3;
           color: black;
         }
 
@@ -36,7 +36,7 @@
         }
         #mydiv
         {
-           background-color:black;
+           background-color:white;
            background-repeat:no-repeat;
            background-size:contain;
            background-size: 300px 300px;
@@ -46,16 +46,17 @@
         }
 </style>
 </head>
-<body>
+<body bgcolor="black">
      <div class="topnav">
-        <a href="{% url 'news' %}">Home</a>
 
-        <a href="{% url 'weather' %}">Weather</a>
-         <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'logout' %}">Logout</a></p>
-     </div>
+
+        <a href="{% url 'news' %}"><font color="white">Home</font></a>
+        <a href="{% url 'about' %}"><font color="white">About</font></a>
+        <a href="{% url 'weather' %}"><font color="white">Weather</font></a>
+        <a href="{% url 'logout' %}"><font color="white">Logout</font></a>
+    </div>
      {% if user.is_authenticated %}
-     <section class="hero is-padding is-primary" style="height:100px">
+     <section class="hero is-padding is-dark" style="height:100px">
           <div class="hero-body" style="padding-left: 45%">
             <h1 class="title">Category</h1>
 
@@ -71,7 +72,7 @@
 
                                         <div class="content" style="justify-content:center;font-family: 'Josefin Sans', sans-serif" >
                                             <p>
-                                                <span class="description"><font color="white">{{category_news.description}}</font> </span>
+                                                <span class="description"><font color="black">{{category_news.description}}</font> </span>
                                                 <br>
 
                                         </div>
@@ -79,6 +80,10 @@
             </a>
 
     {% endfor %}
+     <div class="subtitle" style="background-color:black">
+	<footer style="padding-left: 40%">&copy;Vineeth J Palatty&nbsp;&nbsp; 2019
+	</footer>
+    </div>
 
     {% else %}
         <p>You are not logged in</p>

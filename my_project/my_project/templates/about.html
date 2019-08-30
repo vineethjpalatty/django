@@ -12,7 +12,7 @@
 
         .topnav {
           overflow: hidden;
-          background-color: #333;
+          background-color: black;
         }
 
         .topnav a {
@@ -25,30 +25,30 @@
         }
 
         .topnav a:hover {
-          background-color: #ddd;
+          background-color: #D3D3D3;
           color: black;
         }
 
         .topnav a.active {
-          background-color: #4CAF50;
+          background-color: #D3D3D3;
           color: white;
         }
     </style>
 </head>
-<body>
+<body bgcolor="black">
     <div class="topnav">
 
 
-        <a href="http://127.0.0.1:8000/news/">Home</a>
-        <a class="active" href="about">About</a>
-         <a href="http://127.0.0.1:8000/weather/">Weather</a>
-        <a href="{% url 'logout' %}">logout</a></p>
+        <a href="{% url 'news' %}"><font color="white">Home</font></a>
+        <a href="{% url 'about' %}"><font color="white">About</font></a>
+        <a href="{% url 'weather' %}"><font color="white">Weather</font></a>
+        <a href="{% url 'logout' %}"><font color="white">Logout</font></a>
     </div>
     {% if user.is_authenticated %}
-    <section class="section">
-      <div class="container">
+<!--    <section class="section">-->
+<!--      <div class="container">-->
 
-        <section class="hero is-primary">
+        <section class="hero is-dark">
           <div class="hero-body" style="padding-left: 50%">
             <h1 class="title">About</h1>
           </div>
@@ -69,9 +69,9 @@
 
               <!-- Right side -->
               <div class="tile is-parent">
-                <article class="tile is-child notification is-success">
+                <article class="tile is-child notification is-primary">
                   <div class="content">
-                   <p class="title">...</p>
+                   <p class="tile">...</p>
 
                     <div class="content">
                     <!-- Content -->
@@ -93,7 +93,7 @@
           <div class="level-left">
 
               <div class="tile is-parent">
-                <article class="tile is-child notification is-success">
+                <article class="tile is-child notification is-primary">
                   <div class="content">
                    <p class="title">...</p>
 
@@ -114,7 +114,7 @@
 
               <!-- Right side -->
           <div class="level-right">
-            <font size="50"> <h1>weather</h1></font>
+            <font size="50"> <h1>Weather</h1></font>
 
           </div>
         </nav>
@@ -126,6 +126,9 @@
 
 
 
-
+<div class="subtitle" style="background-color:black">
+	<footer style="padding-left: 40%">&copy;Vineeth J Palatty&nbsp;&nbsp; 2019
+	</footer>
+</div>
 </body>
 </html>

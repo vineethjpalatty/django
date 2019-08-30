@@ -14,7 +14,7 @@ body {
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: black;
 }
 
 .topnav a {
@@ -27,7 +27,7 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #D3D3D3;
   color: black;
 }
 
@@ -37,104 +37,58 @@ body {
 }
 </style>
 </head>
-    <a>
-
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
+<body bgcolor="black">
 
 
+     <div class="topnav">
 
 
-
-        <a href="{% url 'category' 'business' %}">Business</a>
-        <a href="{% url 'category' 'sports' %}">Sports</a>
-        <a href="{% url 'category' 'technology' %}">Technology</a>
-        <a href="{% url 'weather' %}">Weather</a>
-         <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'logout' %}">Logout</a></p>
-
-
+         <a href="{% url 'news' %}"><font color="white">Home</font></a>
+         <a href="{% url 'category' 'business' %}"><font color="white">Business</font></a>
+         <a href="{% url 'category' 'sports' %}"><font color="white">Sports</font></a>
+         <a href="{% url 'category' 'technology' %}"><font color="white">Technology</font></a>
+         <a href="{% url 'about' %}"><font color="white">About</font></a>
+         <a href="{% url 'weather' %}"><font color="white">Weather</font></a>
+         <a href="{% url 'logout' %}"><font color="white">Logout</font></a>
     </div>
 
 
-
-
     {% if user.is_authenticated %}
-         <section class="hero is-primary">
+         <section class="hero is-dark">
               <div class="hero-body" style="padding-left: 35%">
                 <h1 class="title">Whats the current news?</h1>
-
+                <h1 class="subtitle" style="padding-left:20%">Top Headlines</h1>
               </div>
          </section>
-          <section class="hero is-padding is-danger" style="height:100px">
-              <div class="hero-body" style="padding-left: 45%">
-                <h1 class="subtitle">Top Headlines</h1>
-
-              </div>
-         </section>
-
-        <section>
-                <div class="container">
-
-                </div>
-        </section>
         <br>
 
-    <!--	<div class="media-content">-->
-    <!--                                <div class="content">-->
-    <!--                                    <p>-->
-    <!--                                        <span class="title">{{ city_news.author }}</span>-->
-    <!--                                        <br>-->
 
-    <!--                                </div>-->
-    <!--	</div>-->
 
-        <div class="media-content">
-
-        </div>
 
          {% for city_news in news_data %}
                 <a href="{{city_news.url}}"
 
-                    <div class="box" style="background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px;">
+                    <div class="box" style="background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px;border-color:"black"">
                             <div class="content" style="justify-content:center;font-family: 'Josefin Sans', sans-serif;padding-top:50px" >
                                 <p>
                                     <span class="subtitle"><font color="black">{{city_news.title}}</font> </span>
                                     <br>
                                 </p>
                             </div>
-    <!--                        <div class="content" style="justify-content:center;background-size:contain;" >-->
-    <!--                            <p>-->
-    <!--                                <span class="description"><font color="black">{{city_news.description}}</font> </span>-->
-    <!--                                <br>-->
-    <!--                            </p>-->
-    <!--                        </div>-->
+
                     </div>
                 </a>
 
         {% endfor %}
+    <div class="subtitle" style="background-color:black">
+	<footer style="padding-left: 40%">&copy;Vineeth J Palatty&nbsp;&nbsp; 2019
+	</footer>
+    </div>
     {% else %}
         <p>You are not logged in</p>
         <a href="{% url 'login' %}">login</a>
     {% endif %}
 
-<!--	<div class="media-content">-->
-<!--                                <div class="content">-->
-<!--                                    <p>-->
-<!--                                        <span class="content">{{ city_news.content }}</span>-->
-<!--                                        <br>-->
-
-<!--                                </div>-->
-<!--	</div>-->
-<!--	<div class="container">-->
-<!--                                <div class="content">-->
-<!--                                    <p>-->
-
-<!--                                       <a href="https://techcrunch.com/2019/08/21/thredup-whose-second-hand-goods-will-start-appearing-at-macys-and-jcpenney-just-raised-a-bundle/">..</a> <span class="url"></span>-->
-<!--                                        <br>-->
-
-<!--                                </div>-->
-<!--	</div>-->
 
 
 

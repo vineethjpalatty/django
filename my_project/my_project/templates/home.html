@@ -11,8 +11,15 @@
     <a href="{% url 'logout' %}">logout</a>
   </p>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
+<div>
+  <img src="https://images.template.net/wp-content/uploads/2016/06/07085741/Embroidery-Black-Background-for-Invitations.jpg" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+
+    <div class="button"><a href="{% url 'login' %}"> <font color="white"> Login</font> </a></div>
+  </div>
+</div>
+<!--  <p>You are not logged in</p>-->
+<!--  <a href="{% url 'login' %}">login</a>-->
 {% endif %}
 
 
