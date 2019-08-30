@@ -8,8 +8,7 @@ def weather(request):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=271d1234d3f497eed5b1d80a07b3fcd1'
 
     err_msg = ''
-    message = ''
-    message_class = ''
+
 
     if request.method == 'POST':
         form = CityForm(request.POST)
@@ -24,16 +23,11 @@ def weather(request):
                 if r['cod'] == 200:
                     form.save()
                 else:
-                    err_msg = 'City does not exist in the world!'
+                    err_msg = '#'
             else:
-                err_msg = 'City already exists in the database!'
+                err_msg = '#'
 
-        if err_msg:
-            message = err_msg
-            message_class = 'is-danger'
-        else:
-            message = 'City added successfully!'
-            message_class = 'is-success'
+
 
     form = CityForm()
 
@@ -56,8 +50,8 @@ def weather(request):
     context = {
         'weather_data': weather_data,
         'form': form,
-        'message': message,
-        'message_class': message_class
+        # 'message': message,
+        # 'message_class': message_class
     }
 
     return render(request, 'htmlpage.html', context)

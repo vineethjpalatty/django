@@ -5,11 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/htmlpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/htmlpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/my_project/weather/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/weather/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/my_project/weather/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/weather/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
