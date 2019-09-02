@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>hellop</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-   <link rel= stylesheet href="https //maxcdn.bootstrapcdn.com/bootstrap/4.7.0/css/font-awesome.min.css">
+  <title>Newsapp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel= stylesheet href="https //maxcdn.bootstrapcdn.com/bootstrap/4.7.0/css/font-awesome.min.css">
+
     <style>
+
         body {
           margin: 0;
           font-family: Arial, Helvetica, sans-serif;
@@ -45,8 +47,7 @@
         <a href="{% url 'logout' %}"><font color="white">Logout</font></a>
     </div>
     {% if user.is_authenticated %}
-<!--    <section class="section">-->
-<!--      <div class="container">-->
+
 
         <section class="hero is-dark">
           <div class="hero-body" style="padding-left: 50%">
@@ -55,9 +56,9 @@
         </section>
 
       <section class="section">
-      <!-- Main container -->
+
         <nav class="level">
-          <!-- Left side -->
+
           <div class="level-left">
 
              <font size="50"> <h1>News</h1></font>
@@ -67,14 +68,14 @@
 
 
 
-              <!-- Right side -->
+
               <div class="tile is-parent">
                 <article class="tile is-child notification is-primary">
                   <div class="content">
                    <p class="tile">...</p>
 
                     <div class="content">
-                    <!-- Content -->
+
                       <p>
                         One should be updated on the latest happenings around the world. The site shows the top headlines across the globe and also news on areas of our interest.<br>
                           Built with the content fetched from Newsapi.com:-News API is a simple and easy-to-use API that returns JSON metadata for headlines and articles live all over the web right now.
@@ -88,9 +89,9 @@
       </section>
 
        <section class="container">
-      <!-- Main container -->
+
         <nav class="level">
-          <!-- Left side -->
+
           <div class="level-left">
 
               <div class="tile is-parent">
@@ -99,7 +100,7 @@
                    <p class="title">...</p>
 
                     <div class="content">
-                    <!-- Content -->
+
                       <p>
                          The site provides the accurate weather condition and temperature of a particular location.<br>
                           The content is fetched from openweathermap.co.
@@ -114,7 +115,7 @@
 
 
 
-              <!-- Right side -->
+
           <div class="level-right">
             <font size="50"> <h1>Weather</h1></font>
 

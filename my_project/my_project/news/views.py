@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import requests
-# from django.contrib.auth.decorators
+
 
 
 # Create your views here.
@@ -14,14 +14,14 @@ def news(request):
     for  i in range(6):
         city_news = \
             {
-    #           'author' : r['articles'][0]['author'],
+
                'title': r['articles'][i]['title'],
                 'description' : r['articles'][i]['description'],
                 'image' : r['articles'][i]['urlToImage'],
-                   'url' : r['articles'][i]['url']
+                'url' : r['articles'][i]['url']
             }
         news_data.append(city_news)
-    #
+
     context = {
 
                 'news_data' : news_data
@@ -40,22 +40,21 @@ def category(request,tag):
 
 
     c = requests.get(url.format(category)).json()
-    print(c)
+
 
     for  i in range(6):
         category_news = \
             {
 
-    #           'author' : r['articles'][0]['author'],
-    #            'title': r['articles'][0]['title'],
+
                 'description' : c['articles'][i]['description'],
-                # 'image' : c['articles'][i]['urlToImage'],
-                    'url' : c['articles'][i]['url']
+
+                'url' : c['articles'][i]['url']
             }
         category_data.append(category_news)
     #
     context = {
-                'category':a,
+                'name':a,
                 'category_data' : category_data
               }
 

@@ -47,18 +47,18 @@ def weather(request):
 
         weather_data.append(city_weather)
 
+
     context = {
         'weather_data': weather_data,
         'form': form,
-        # 'message': message,
-        # 'message_class': message_class
+
     }
 
     return render(request, 'htmlpage.html', context)
 
 
 
- # def delete_city(request, city_name):
- #        City.objects.get(name=city_name).delete()
- #
- #        return redirect('home')
+def delete_city(request, city_name):
+        City.objects.get(name=city_name).delete()
+
+        return redirect('weather')
