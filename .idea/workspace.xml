@@ -4,7 +4,11 @@
     <list default="true" id="20f02405-0eac-459a-ae03-d16bb6c5ed48" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/my_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/htmlpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/htmlpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/news.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

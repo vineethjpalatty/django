@@ -56,7 +56,7 @@ ROOT_URLCONF = 'my_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/sayone/Desktop/my_project/my_project/my_project/templates'],
+        'DIRS': ['my_project/my_project/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
