@@ -1,0 +1,24 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+   <link rel= stylesheet href="https //maxcdn.bootstrapcdn.com/bootstrap/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="hero is-dark">
+          <div class="hero-body" style="padding-left: 40%">
+            <h1 class="title">SignUp</h1>
+          </div>
+    </section>
+
+    <div class="container" style="padding-top:10px;border-style:solid;border-width:10px;border-height:10px;">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <div style="padding-left:40%">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import requests
+from .models import Editorial
+from .forms import EditorialForm
+from django.contrib.auth.decorators import user_passes_test
 
 
 
@@ -9,7 +12,7 @@ def news(request):
 
     news_data=[]
     r = requests.get(url).json()
-    print(r)
+
 
     for  i in range(6):
         city_news = \
@@ -68,5 +71,33 @@ def category(request,tag):
 def about(request):
     return render(request,'about.html')
 
+@user_passes_test(lambda u: u.is_superuser,login_url='/falseuser/')
+def editorial(request):
+
+    if request.method == 'POST':
+
+        form = EditorialForm(request.POST)
+        form.save()
+        return redirect('editorial')
+    else:
+        form = EditorialForm()
+        return render(request,'editorial.html',{
+            'form': form,
+        })
+
+def falseuser(request):
+    return render(request,'falseuser.html')
+
+def articles(request):
+    article = Editorial.objects.all()
+    form=EditorialForm()
+
+    args= {'form':form,'article':article}
+
+    return render(request,'articles.html',args)
 
 
+@user_passes_test(lambda u: u.is_superuser,login_url='/falseuser/')
+def delete_article(request, article_name):
+        Editorial.objects.get(Heading=article_name).delete()
+        return redirect('articles')

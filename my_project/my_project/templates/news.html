@@ -39,6 +39,16 @@ body {
   background-color: #4CAF50;
   color: white;
 }
+.box{
+
+   background-size: 300px 300px;
+   width:300px;height:300px;
+   float:left;
+   margin-right:10px;margin-bottom:10px;
+   border-color:"black";
+
+}
+
 </style>
 </head>
 <body bgcolor="black">
@@ -53,6 +63,8 @@ body {
          <a href="{% url 'category' 'Technology' %}"><font color="white">Technology</font></a>
          <a href="{% url 'about' %}"><font color="white">About</font></a>
          <a href="{% url 'weather' %}"><font color="white">Weather</font></a>
+         <a href="{% url 'editorial' %}"><font color="white">Editorial</font></a>
+         <a href="{% url 'articles' %}"><font color="white">Articles</font></a>
          <a href="{% url 'logout' %}"><font color="white">Logout</font></a>
     </div>
 
@@ -70,7 +82,7 @@ body {
 
 
          {% for city_news in news_data %}
-                <a href="{{city_news.url}}"
+                  <a href="{{city_news.url}}"
 
                     <div class="box" style="background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px;border-color:"black"">
                             <div class="content" style="justify-content:center;font-family: 'Josefin Sans', sans-serif;padding-top:50px" >
@@ -80,10 +92,11 @@ body {
                                 </p>
                             </div>
 
-                    </div>
+                    </body>
                 </a>
 
         {% endfor %}
+
     <div class="subtitle" style="background-color:black">
 	<footer style="padding-left: 40%">&copy;Vineeth J Palatty&nbsp;&nbsp; 2019
 	</footer>

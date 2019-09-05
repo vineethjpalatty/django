@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 from my_project.news import views as zcv
 from my_project.weather import views as zdv
+from my_project.accounts import views as zev
+
 
 from django.views.generic.base import TemplateView
 urlpatterns = [
@@ -28,6 +30,11 @@ urlpatterns = [
     path('delete_city/<city_name>/',zdv.delete_city,name='delete_city'),
     path('', include('django.contrib.auth.urls')),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('signup/',zev.signup,name='signup'),
+    path('editorial/',zcv.editorial,name='editorial'),
+    path('articles/',zcv.articles,name='articles'),
+    path('falseuser/',zcv.falseuser,name='falseuser'),
+    path('delete_article/<article_name>/',zcv.delete_article,name='delete_article'),
 
 
 
