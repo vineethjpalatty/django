@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20f02405-0eac-459a-ae03-d16bb6c5ed48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/my_project/my_project/editorial/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_project/my_project/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/news/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/my_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/my_project/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_project/my_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/my_project/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +21,7 @@
   <component name="ProjectId" id="1PzbzxEYVaIXlfLSr4xRyWBqIAu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../training/my_project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

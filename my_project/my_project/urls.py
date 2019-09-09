@@ -35,6 +35,7 @@ urlpatterns = [
     path('articles/',zcv.articles,name='articles'),
     path('falseuser/',zcv.falseuser,name='falseuser'),
     path('delete_article/<article_name>/',zcv.delete_article,name='delete_article'),
+    path('oauth/', include('social_django.urls', namespace='social')),
 
 
 
