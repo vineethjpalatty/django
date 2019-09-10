@@ -20,6 +20,7 @@ from my_project.weather import views as zdv
 from my_project.accounts import views as zev
 
 
+
 from django.views.generic.base import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
