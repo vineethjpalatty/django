@@ -14,7 +14,7 @@ def news(request):
     r = requests.get(url).json()
 
 
-    for  i in range(6):
+    for  i in range(9):
         city_news = \
             {
 

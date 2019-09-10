@@ -90,15 +90,15 @@ body {
         <div class="row" style="margin:0.5%">
             {% for city_news in news_data %}
 
-                    <div class="col-sm-3" style="margin: 0.2%;background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 100% 100%;border-radius: 2% 2%;">
+                    <div class="col-sm-3" style="margin: 2%;background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 100% 100%;border-radius: 2% 2%;">
                         <div class="content" style="justify-content:center;font-family: 'Josefin Sans', sans-serif;padding:10%" >
                                             <p>
                                                 <span class="subtitle"><font color="black">{{city_news.title}}</font> </span>
                                                 <br>
                                             </p>
                         </div>
-                         <div style="float:right;float:bottom">
-                            <a href="{{category_news.url}}">
+                         <div style="position: absolute; bottom: 0pt; right: 0pt">
+                            <a href="{{city_news.url}}">
                                  <p>Learn more..</p>
                              </a>
                          </div>
