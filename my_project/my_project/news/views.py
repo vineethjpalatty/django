@@ -49,7 +49,7 @@ def category(request,tag):
         category_news = \
             {
 
-
+                'title' : c['articles'][i]['title'],
                 'description' : c['articles'][i]['description'],
 
                 'url' : c['articles'][i]['url']

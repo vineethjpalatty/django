@@ -1,12 +1,13 @@
 
 <!DOCTYPE html>
-<section>
+<html>
 <head>
 
 	<title>NewsApp</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel= stylesheet href="https //maxcdn.bootstrapcdn.com/bootstrap/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
@@ -51,7 +52,11 @@ body {
 
 </style>
 </head>
-<body bgcolor="black">
+<body style="background-color:black">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 
 
      <div class="topnav">
@@ -81,21 +86,26 @@ body {
 
 
 
-         {% for city_news in news_data %}
-                  <a href="{{city_news.url}}"
 
-                    <div class="box" style="background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 300px 300px; width:300px;height:300px;float:left;margin-right:10px;margin-bottom:10px;border-color:"black"">
-                            <div class="content" style="justify-content:center;font-family: 'Josefin Sans', sans-serif;padding-top:50px" >
-                                <p>
-                                    <span class="subtitle"><font color="black">{{city_news.title}}</font> </span>
-                                    <br>
-                                </p>
-                            </div>
+        <div class="row" style="margin:0.5%">
+            {% for city_news in news_data %}
 
-                    </body>
-                </a>
+                    <div class="col-sm-3" style="margin: 0.2%;background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{city_news.image}}');background-size: 100% 100%;border-radius: 2% 2%;">
+                        <div class="content" style="justify-content:center;font-family: 'Josefin Sans', sans-serif;padding:10%" >
+                                            <p>
+                                                <span class="subtitle"><font color="black">{{city_news.title}}</font> </span>
+                                                <br>
+                                            </p>
+                        </div>
+                         <div style="float:right;float:bottom">
+                            <a href="{{category_news.url}}">
+                                 <p>Learn more..</p>
+                             </a>
+                         </div>
+                    </div>
 
-        {% endfor %}
+            {% endfor %}
+        </div>
 
     <div class="subtitle" style="background-color:black">
 	<footer style="padding-left: 40%">&copy;Vineeth J Palatty&nbsp;&nbsp; 2019
@@ -111,3 +121,5 @@ body {
 
 </body>
 </html>
+
+
