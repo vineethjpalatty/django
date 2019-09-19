@@ -5,64 +5,57 @@ from .forms import EditorialForm
 from django.contrib.auth.decorators import user_passes_test
 
 
-
 # Create your views here.
 def news(request):
     url = 'https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=f9454a944cd14fdea4fb920d5a5378af'
 
-    news_data=[]
+    news_data = []
     r = requests.get(url).json()
 
-
-    for  i in range(9):
+    for i in range(9):
         city_news = \
             {
 
-               'title': r['articles'][i]['title'],
+                'title': r['articles'][i]['title'],
                 'description' : r['articles'][i]['description'],
-                'image' : r['articles'][i]['urlToImage'],
-                'url' : r['articles'][i]['url']
+                'image': r['articles'][i]['urlToImage'],
+                'url': r['articles'][i]['url']
             }
         news_data.append(city_news)
 
     context = {
 
-                'news_data' : news_data
+                'news_data': news_data
               }
 
+    return render(request, 'news.html', context)
 
-    return render(request,'news.html',context)
 
-def category(request,tag):
+def category(request, tag):
     url = "https://newsapi.org/v2/everything?q={}&apiKey=f9454a944cd14fdea4fb920d5a5378af"
-    category=tag
+    category = tag
     category_data = []
-    a=category
-
-
-
+    a = category
 
     c = requests.get(url.format(category)).json()
 
-
-    for  i in range(6):
+    for i in range(9):
         category_news = \
             {
 
-                'title' : c['articles'][i]['title'],
-                'description' : c['articles'][i]['description'],
+                'title': c['articles'][i]['title'],
+                'description': c['articles'][i]['description'],
 
-                'url' : c['articles'][i]['url']
+                'url': c['articles'][i]['url']
             }
         category_data.append(category_news)
     #
     context = {
-                'name':a,
-                'category_data' : category_data
+                'name': a,
+                'category_data': category_data
               }
 
-
-    return render(request,'category.html',context)
+    return render(request, 'category.html', context)
 
 
 

@@ -42,8 +42,8 @@
 
 
         <a href="{% url 'news' %}"><font color="white">Home</font></a>
-        <a href="{% url 'about' %}"><font color="white">About</font></a>
         <a href="{% url 'weather' %}"><font color="white">Weather</font></a>
+        <a href="{% url 'about' %}"><font color="white">About</font></a>
         <a href="{% url 'logout' %}"><font color="white">Logout</font></a>
     </div>
     {% if user.is_authenticated %}

@@ -9,7 +9,6 @@ def weather(request):
 
     err_msg = ''
 
-
     if request.method == 'POST':
         form = CityForm(request.POST)
 
@@ -47,7 +46,6 @@ def weather(request):
 
         weather_data.append(city_weather)
 
-
     context = {
         'weather_data': weather_data,
         'form': form,
@@ -57,8 +55,7 @@ def weather(request):
     return render(request, 'htmlpage.html', context)
 
 
-
 def delete_city(request, city_name):
-        City.objects.get(name=city_name).delete()
+    City.objects.get(name=city_name).delete()
 
-        return redirect('weather')
+    return redirect('weather')

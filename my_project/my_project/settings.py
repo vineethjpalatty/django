@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+# import django_heroku
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +25,7 @@ SECRET_KEY = 'tder0+cl#abu7!*j52#3!2_z95-04=tgxx4nl(xyxcnzru!a*$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'my_project.urls'
@@ -85,18 +86,41 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': os.getenv('DB_NAME'),
+
+        'USER': os.getenv('DB_USER'),
+
+        'PASSWORD': os.getenv('DB_PASS'),
+
+        'HOST': os.getenv('DB_HOST'),
+
+        'PORT': os.getenv('DB_PORT'),
+
     }
+
 }
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='348837099810-8bqgeaumlg2b06qusmtdg5nc4igi3n9d.apps.googleusercontent.com'  #Paste CLient Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'TQvwlN3_0_7YMeyRpN4tDLcN' #Paste Secret Key
 
-SOCIAL_AUTH_KEY ='348837099810-8bqgeaumlg2b06qusmtdg5nc4igi3n9d.apps.googleusercontent.com'  #Paste CLient Key
-SOCIAL_AUTH_SECRET = 'TQvwlN3_0_7YMeyRpN4tDLcN' #Paste Secret Key
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='327759501544-k5qs1jvojtoitahnhurlvnp33pn0r6kh.apps.googleusercontent.com'  #Paste CLient Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'DZuUo6jgvHi2VQqIphAyG3_S' #Paste Secret Key
+
+SOCIAL_AUTH_KEY ='327759501544-k5qs1jvojtoitahnhurlvnp33pn0r6kh.apps.googleusercontent.com'  #Paste CLient Key
+SOCIAL_AUTH_SECRET = 'DZuUo6jgvHi2VQqIphAyG3_S' #Paste Secret Key
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -135,5 +159,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL= 'news'
+LOGIN_REDIRECT_URL = 'news'
 LOGOUT_REDIRECT_URL = 'login'
+
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR,'static')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+#django_heroku.settings(locals())
