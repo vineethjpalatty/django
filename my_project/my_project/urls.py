@@ -18,8 +18,13 @@ from django.urls import path,include
 from my_project.news import views as zcv
 from my_project.weather import views as zdv
 from my_project.accounts import views as zev
+from my_project.posts import views as zpv
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 
+from django.contrib.auth import views as auth_views
 
 from django.views.generic.base import TemplateView
 urlpatterns = [
@@ -30,7 +35,8 @@ urlpatterns = [
     path('weather/',zdv.weather,name='weather'),
     path('delete_city/<city_name>/',zdv.delete_city,name='delete_city'),
     path('', include('django.contrib.auth.urls')),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    # path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('', auth_views.LoginView.as_view(),name='home'),
     path('signup/',zev.signup,name='signup'),
     path('editorial/',zcv.editorial,name='editorial'),
     path('articles/',zcv.articles,name='articles'),
@@ -40,4 +46,11 @@ urlpatterns = [
 
 
 
+    path('upload/', zpv.Blog.as_view(), name='upload'),
+    path('display/', zpv.BlogView2, name='display'),
+
+
+
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

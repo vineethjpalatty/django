@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'my_project.news',
+    'my_project.posts',
+
 	'my_project.weather',
     'social_django',
+
+    'widget_tweaks'
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -158,7 +162,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/blogs/posts/static/'
 LOGIN_REDIRECT_URL = 'news'
 LOGOUT_REDIRECT_URL = 'login'
 
@@ -167,3 +171,6 @@ STATIC_ROOT = os.path.join(PROJECT_DIR,'static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #django_heroku.settings(locals())
+
+MEDIA_URL = '/my_project/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
