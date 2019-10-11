@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'my_project.news',
-    'my_project.posts',
+	'apps.news',
+    'apps.posts',
 
-	'my_project.weather',
+	'apps.weather',
     'social_django',
 
     'widget_tweaks'
@@ -69,7 +69,7 @@ ROOT_URLCONF = 'my_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': (PROJECT_PATH + '/templates/',),
+        'DIRS': (BASE_DIR + '/apps/templates/',),
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -172,5 +172,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #django_heroku.settings(locals())
 
-MEDIA_URL = '/my_project/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
